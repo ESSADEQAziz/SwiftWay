@@ -1,5 +1,5 @@
 package SwiftWay.Controllers;
 
-public class TestController {
+public class LoginController {
     
 }
