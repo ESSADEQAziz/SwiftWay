@@ -2,7 +2,7 @@ package SwiftWay.Models;
 
 import java.util.ArrayList;
 
-public class Voyajeur extends Consultant {
+public class Voyajeur {
        // Les attributs de la classe :
 
     private String CIN;
@@ -16,6 +16,10 @@ public class Voyajeur extends Consultant {
         this.nom = nom;
         this.prenom = prenom;
     }
+    // La depandence avec la classe Offre :
+
+    public ArrayList<Offre> offres = new ArrayList<Offre>();
+
        // La dependance avec la classe Reservation :
 
        ArrayList<Reservation> reservations = new ArrayList<Reservation>();
@@ -44,5 +48,7 @@ public class Voyajeur extends Consultant {
        // Les methode de la classe : 
 
     public void Retirer(){
+    }
+    public void consulter(){
     }
 }
