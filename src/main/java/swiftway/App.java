@@ -36,7 +36,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-      //  launch();
+      //  launch(); ;jjjj
       Connection cnx=DBconnection.getConnection();
       try {
      Statement sqlStatement =cnx.createStatement();

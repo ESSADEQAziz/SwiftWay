@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="777.0" style="-fx-background-color: F8FAFB;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="533.0" fitWidth="533.0" layoutX="122.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="122.0" AnchorPane.rightAnchor="122.0" AnchorPane.topAnchor="10.0">
+         <image>
+            <Image url="@Logo02.png" />
+         </image>
+         <effect>
+            <InnerShadow height="0.0" offsetY="4.0" radius="0.0" width="0.0">
+               <color>
+                  <Color opacity="0.25" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>
