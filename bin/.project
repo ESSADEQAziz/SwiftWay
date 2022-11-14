@@ -20,19 +20,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-<<<<<<< Updated upstream
-			<name>src/main/java/SwiftWay/Views/Admin.fxml</name>
-			<type>1</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/Desktop/Projet%20Ticket/Admin.fxml</locationURI>
-		</link>
-		<link>
-=======
->>>>>>> Stashed changes
-			<name>src/main/java/SwiftWay/Views/Login.fxml</name>
-			<type>1</type>
-			<locationURI>PARENT-3-PROJECT_LOC/Desktop/Projet%20Ticket/Login.fxml</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
