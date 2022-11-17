@@ -1,16 +1,15 @@
 package swiftway;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import swiftway.DB_connection.DBconnection;
+import javafx.stage.WindowEvent;
+
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * JavaFX App
@@ -21,7 +20,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML("Login"), 830, 490);
         stage.setScene(scene);
         stage.show();
     }
@@ -36,20 +35,9 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-      //  launch(); ;jjjj
-      Connection cnx=DBconnection.getConnection();
-      try {
-     Statement sqlStatement =cnx.createStatement();
-     String query="insert into Admin values ('admin77','admin77');";
-     sqlStatement.executeUpdate(query);
-     System.out.println("Execution du query avec succes !!");
-     sqlStatement.close();
-      
- } catch (SQLException e) {
-     System.out.println("Erreur D'execution du query !!");
-     e.printStackTrace();
- } 
-  }
-    
+       launch(args);
+       
+}
+
 
 }

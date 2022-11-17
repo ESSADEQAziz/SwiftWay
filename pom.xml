@@ -26,6 +26,76 @@
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.16</version>
 </dependency>
+<dependency>
+    <groupId>com.jfoenix</groupId>
+    <artifactId>jfoenix</artifactId>
+    <version>9.0.10</version>
+</dependency>
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx</artifactId>
+    <version>8.9</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-commons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-commons</artifactId>
+    <version>9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-fontawesome -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-fontawesome</artifactId>
+    <version>4.7.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialicons</artifactId>
+    <version>2.2.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-octicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-octicons</artifactId>
+    <version>4.3.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-weathericons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-weathericons</artifactId>
+    <version>2.0.10-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialdesignfont -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialdesignfont</artifactId>
+    <version>2.0.26-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-icons525 -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-icons525</artifactId>
+    <version>4.2.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-controls -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-controls</artifactId>
+    <version>9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-emojione -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-emojione</artifactId>
+    <version>3.1.1-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialstackicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialstackicons</artifactId>
+    <version>2.1-5-9.1.2</version>
+</dependency>
     </dependencies>
     <build>
         <plugins>
