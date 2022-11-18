@@ -184,6 +184,22 @@
                   </HBox>
                </children>
             </VBox>
+            <VBox alignment="CENTER" prefHeight="52.0" prefWidth="247.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" text="Déconnexion">
+                     <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/exit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Century" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </left>
