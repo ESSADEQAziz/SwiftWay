@@ -1,5 +1,6 @@
 package swiftway;
 
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,6 +24,9 @@ public class LoginController {
 
     @FXML
     public void btnLogin() throws IOException{
+      if(username.getText().equals("") || password.getText().equals("")){
+          LoginController.Erreur();
+        }else{
        Connection cnx=DBconnection.getConnection();
       try {
      Statement sqlStatement =cnx.createStatement();
@@ -33,18 +37,20 @@ public class LoginController {
       while(results.next()){
         if(username.getText().equals(results.getString("nomUtilisateur")) &&
          password.getText().equals(results.getString("motDePasse"))){
-            App.setRoot("primary");
+            App.setRoot("Acceuil");
             break;
         }else{
             LoginController.Erreur();
             username.setText("");
             password.setText("");
         }
+          
       }
     } catch (SQLException e) {
      System.out.println("Erreur D'execution du query !!");
      e.printStackTrace();
     }
+  }
     }
 
     @FXML

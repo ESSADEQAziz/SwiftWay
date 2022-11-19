@@ -1,0 +1,39 @@
+.LeftVbox{
+    -fx-background-color: rgb(40, 185, 185);
+}
+.categories:hover{
+    -fx-border-width: 2px;
+    -fx-border-color: aliceblue;
+    -fx-background-color:rgb(40, 185, 185) ;
+    -fx-border-radius: 8px;
+    
+}
+.btnDeconnexion{
+    -fx-border-width: 2px;
+    -fx-border-color: aliceblue;
+    -fx-background-color:rgb(40, 185, 185) ;
+    -fx-border-radius: 8px;
+    
+}
+.btnDeconnexion:pressed{
+    -fx-rotate: 10deg;
+    -fx-scale-x:1.1;
+    -fx-scale-y:1.1;
+}
+.btnDeconnexion:hover{
+    -fx-background-color: aliceblue;
+    -fx-text-fill: rgb(40, 185, 185);
+    -fx-border-width: 2px;
+    -fx-border-color: aliceblue;
+    -fx-border-radius: 8px;
+    -fx-cursor:hand;
+}
+.titre{
+    -fx-text-fill: rgb(40, 185, 185);
+}
+.categorie{
+    -fx-border-width: 2px;
+    -fx-border-color: aliceblue;
+    -fx-background-color:rgb(40, 185, 185) ;
+    -fx-border-radius: 8px;
+}

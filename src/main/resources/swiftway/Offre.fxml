@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -11,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="841.0" style="-fx-background-color: #F8FAFB;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="841.0" stylesheets="@CSS_files/CSS_2.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.OffreController">
    <left>
-      <VBox prefHeight="562.0" prefWidth="247.0" spacing="5.0" style="-fx-background-color: #0066FF;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="562.0" prefWidth="247.0" spacing="5.0" styleClass="LeftVbox" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" fillWidth="false" prefHeight="64.0" prefWidth="247.0">
                <VBox.margin>
@@ -52,7 +53,7 @@
             </VBox>
             <VBox prefHeight="314.0" prefWidth="247.0" spacing="10.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Acceuil" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -78,7 +79,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Compagnie" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -104,7 +105,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Offre" alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -129,8 +130,12 @@
                            </HBox.margin>
                         </Label>
                      </children>
+                     <styleClass>
+                        <String fx:value="categories" />
+                        <String fx:value="categorie" />
+                     </styleClass>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Profile" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -156,7 +161,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Statistique" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -186,7 +191,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="52.0" prefWidth="247.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" text="Déconnexion">
+                  <Button alignment="CENTER" mnemonicParsing="false" styleClass="btnDeconnexion" text="Déconnexion">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -204,9 +209,9 @@
       </VBox>
    </left>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="46.0" prefWidth="150.0" text="Offre" textFill="#0066ff">
+            <Label prefHeight="46.0" prefWidth="98.0" styleClass="titre" text="Offre" textFill="#0066ff">
                <font>
                   <Font name="Calibri Bold" size="32.0" />
                </font>
