@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="561.0" prefWidth="841.0" style="-fx-background-color: #F8FAFB;" stylesheets="@CSS_files/CSS_2.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.CompagnieController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="940.0" stylesheets="@CSS_files/CSS_2.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.CompagnieController">
    <left>
       <VBox prefHeight="562.0" prefWidth="247.0" spacing="5.0" styleClass="LeftVbox" BorderPane.alignment="CENTER">
          <children>
@@ -53,7 +53,7 @@
             </VBox>
             <VBox prefHeight="314.0" prefWidth="247.0" spacing="10.0">
                <children>
-                  <HBox id="Acceuil" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
+                  <HBox id="Acceuil" alignment="CENTER" onMouseClicked="#setRoottoAcceuil" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -109,7 +109,7 @@
                         <String fx:value="categorie" />
                      </styleClass>
                   </HBox>
-                  <HBox id="Offre" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
+                  <HBox id="Offre" alignment="CENTER" onMouseClicked="#setRoottoOffre" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -135,7 +135,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Profile" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
+                  <HBox id="Profile" alignment="CENTER" onMouseClicked="#setRoottoProfile" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -161,7 +161,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Statistique" alignment="CENTER" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
+                  <HBox id="Statistique" alignment="CENTER" onMouseClicked="#setRoottoStatistique" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -191,7 +191,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="52.0" prefWidth="247.0">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" styleClass="btnDeconnexion" text="Déconnexion">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnDeconnexion" styleClass="btnDeconnexion" text="Déconnexion">
                      <graphic>
                         <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                            <image>

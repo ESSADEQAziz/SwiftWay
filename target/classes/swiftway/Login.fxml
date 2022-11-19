@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="490.0" maxWidth="830.0" minHeight="490.0" minWidth="830.0" prefHeight="490.0" prefWidth="830.0" stylesheets="@CSS_files/CSS_1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.LoginController">
+<HBox prefHeight="560.0" prefWidth="940.0" stylesheets="@CSS_files/CSS_1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.LoginController">
    <children>
-      <VBox maxHeight="490.0" maxWidth="390.0" prefHeight="490.0" prefWidth="390.0" styleClass="hbox1">
+      <VBox maxHeight="567.0" maxWidth="390.0" prefHeight="567.0" prefWidth="390.0" styleClass="hbox1">
          <children>
             <ImageView fitHeight="367.0" fitWidth="513.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -38,7 +38,7 @@
             </ImageView>
          </children>
       </VBox>
-      <VBox prefHeight="490.0" prefWidth="490.0">
+      <VBox prefHeight="560.0" prefWidth="560.0">
          <children>
             <HBox prefHeight="137.0" prefWidth="463.0">
                <children>
@@ -54,7 +54,7 @@
                   </Label>
                </children>
                <padding>
-                  <Insets left="80.0" />
+                  <Insets left="100.0" />
                </padding>
             </HBox>
             <HBox alignment="CENTER" prefHeight="91.0" prefWidth="463.0" spacing="10.0">
@@ -90,16 +90,16 @@
                   <Insets />
                </VBox.margin>
                <padding>
-                  <Insets left="25.0" />
+                  <Insets left="70.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="80.0">
                <children>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnLogin" prefHeight="37.0" prefWidth="170.0" styleClass="btnclass" text="Login" />
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnExit" prefHeight="37.0" prefWidth="170.0" styleClass="btnclass" text="Exit" />
                </children>
                <padding>
-                  <Insets left="35.0" />
+                  <Insets left="50.0" />
                </padding>
             </HBox>
          </children>
