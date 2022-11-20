@@ -10,12 +10,17 @@ public class Companie {
 
        // Le Constructeur De la classe :
 
+    public Companie(String nomDeSociete) {
+        this.nomDeSociete = nomDeSociete;
+    }
+    
+       
+      // Le Constructeur De la classe :
     public Companie(String nomDeSociete, int totalVehicules) {
         this.nomDeSociete = nomDeSociete;
         this.totalVehicules = totalVehicules;
     }
        // La Depandence avec la classe Offre :
-
     public ArrayList<Offre> offres = new ArrayList<Offre>();
 
        // Les Getters et les Setters :
