@@ -21,6 +21,10 @@ public class ProfileController {
     void setRoottoOffre(MouseEvent event) throws IOException {
         App.setRoot("Offre");
     }
+    @FXML
+    void setRoottoProfile(MouseEvent event) throws IOException {
+        App.setRoot("Profile");
+    }
 
     @FXML
     void setRoottoStatistique(MouseEvent event) throws IOException {

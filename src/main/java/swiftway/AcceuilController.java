@@ -127,6 +127,11 @@ public class AcceuilController  implements Initializable{
     }
 
     @FXML
+    void setRoottoAcceuil(MouseEvent event) throws IOException {
+         App.setRoot("Acceuil");
+    }
+
+    @FXML
     void setRoottoCompagnie(MouseEvent event) throws IOException {
       App.setRoot("Compagnie");
     }

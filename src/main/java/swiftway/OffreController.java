@@ -16,6 +16,10 @@ public class OffreController {
     void setRoottoCompagnie(MouseEvent event) throws IOException {
         App.setRoot("Compagnie");
     }
+    @FXML
+    void setRoottoOffre(MouseEvent event) throws IOException {
+        App.setRoot("Offre");
+    }
 
     @FXML
     void setRoottoProfile(MouseEvent event) throws IOException {

@@ -131,7 +131,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Profile" alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Profile" alignment="CENTER" onMouseClicked="#setRoottoProfile" prefHeight="45.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>

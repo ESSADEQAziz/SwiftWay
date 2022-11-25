@@ -82,7 +82,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Compagnie" alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Compagnie" alignment="CENTER" onMouseClicked="#setRoottoCompagnie" prefHeight="45.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -219,6 +219,23 @@
                   <Font name="Calibri Bold" size="32.0" />
                </font>
             </Label>
+            <HBox alignment="TOP_RIGHT" prefHeight="33.0" prefWidth="613.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="24.0" fitWidth="49.0" onMouseClicked="#refreshIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@images/refresh.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="24.0" fitWidth="49.0" onMouseClicked="#exportIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                     <image>
+                        <Image url="@images/printer.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
             <TableView fx:id="table" prefHeight="315.0" prefWidth="613.0">
                <columns>
                   <TableColumn fx:id="nomDeSociete" prefWidth="202.66666221618652" text="Nom De Societe" />
@@ -226,7 +243,7 @@
                   <TableColumn fx:id="nombreDoffres" prefWidth="207.33334350585938" text="Nombre D'offres" />
                </columns>
                <VBox.margin>
-                  <Insets top="40.0" />
+                  <Insets top="10.0" />
                </VBox.margin>
                <opaqueInsets>
                   <Insets />

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="500.0" stylesheets="@CSS_files/CSS_1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.AjouterCompanieController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="500.0" stylesheets="@CSS_files/CSS_1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.AjouterCompanieController">
    <children>
       <ImageView fitHeight="121.0" fitWidth="422.0" layoutX="79.0" pickOnBounds="true" preserveRatio="true">
          <image>

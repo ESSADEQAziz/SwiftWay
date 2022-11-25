@@ -1,6 +1,9 @@
 package swiftway;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -9,6 +12,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -127,9 +134,52 @@ public class CompagnieController implements Initializable{
         stage1.setScene(scene);
         stage1.show();  
     }
+    //=========================================================================================================================================================
+    @FXML
+    void exportIcon(MouseEvent event) {
+        ArrayList<Companie> liste2=(ArrayList<Companie>)RemplireTable().clone();
+        HSSFWorkbook wb =new HSSFWorkbook();
+        HSSFSheet sheet=wb.createSheet("SwiftWay_Compagnies");
+        HSSFRow header =sheet.createRow(0);
+        header.createCell(0).setCellValue("Nom De Societe");
+        header.createCell(1).setCellValue("Totale Vehicules");
+        header.createCell(2).setCellValue("Nombre D'Offres");
+
+        for (int i = 1; i <= liste2.size(); i++) {
+            HSSFRow row =sheet.createRow(i);
+            row.createCell(0).setCellValue(liste2.get(i-1).getNomDeSociete());
+            row.createCell(1).setCellValue(liste2.get(i-1).getTotalVehicules());
+            row.createCell(2).setCellValue(liste2.get(i-1).getNombreDoffres());
+        }
+        try {
+            
+            OutputStream fileOut=new FileOutputStream("SwiftWay_Compagnies.xls");
+                       // The name of the file can have an '.xls' or '.xlsx' extention depend on version.
+            wb.write(fileOut);
+            fileOut.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("1111");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("222");
+            e.printStackTrace();
+        }
+    }
+    //=========================================================================================================================================================
+
+    @FXML
+    void refreshIcon(MouseEvent event) throws IOException {
+        App.setRoot("Compagnie");
+    }
+    //=========================================================================================================================================================
     @FXML
     void setRoottoAcceuil(MouseEvent event) throws IOException {
         App.setRoot("Acceuil");
+    }
+
+    @FXML
+    void setRoottoCompagnie(MouseEvent event) throws IOException {
+        App.setRoot("Compagnie");
     }
 
     @FXML

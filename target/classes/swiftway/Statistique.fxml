@@ -157,7 +157,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Statistique" alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Statistique" alignment="CENTER" onMouseClicked="#setRoottoStatistique" prefHeight="45.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>

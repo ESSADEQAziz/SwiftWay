@@ -58,7 +58,7 @@
             </VBox>
             <VBox prefHeight="314.0" prefWidth="247.0" spacing="10.0">
                <children>
-                  <HBox id="Acceuil" alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                  <HBox id="Acceuil" alignment="CENTER" onMouseClicked="#setRoottoAcceuil" prefHeight="45.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -25,7 +25,12 @@ public class StatistiqueController {
     @FXML
     void setRoottoProfile(MouseEvent event) throws IOException {
         App.setRoot("Profile");
-    } @FXML
+    } 
+    @FXML
+    void setRoottoStatistique(MouseEvent event) throws IOException {
+        App.setRoot("Statistique");
+    }
+    @FXML
     void btnDeconnexion(ActionEvent event) {
        LoginController.fermerProgramme();
     }
