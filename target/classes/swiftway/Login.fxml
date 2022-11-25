@@ -81,7 +81,7 @@
                         <Image url="@images/Password_Icon.png" />
                      </image>
                   </ImageView>
-                  <PasswordField fx:id="password" prefHeight="37.0" prefWidth="367.0" promptText="PassWord" styleClass="txtlabel">
+                  <PasswordField fx:id="password" prefHeight="37.0" prefWidth="371.0" promptText="PassWord" styleClass="txtlabel">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin></PasswordField>
@@ -93,14 +93,26 @@
                   <Insets left="70.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="80.0">
+            <HBox prefHeight="82.0" prefWidth="555.0" spacing="30.0">
                <children>
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnLogin" prefHeight="37.0" prefWidth="170.0" styleClass="btnclass" text="Login" />
                   <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnExit" prefHeight="37.0" prefWidth="170.0" styleClass="btnclass" text="Exit" />
                </children>
                <padding>
-                  <Insets left="50.0" />
+                  <Insets left="110.0" />
                </padding>
+            </HBox>
+            <HBox prefHeight="115.0" prefWidth="555.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="163.0" text="© 2022-2023">
+                     <font>
+                        <Font name="Bodoni MT" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="200.0" top="70.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
             </HBox>
          </children>
       </VBox>

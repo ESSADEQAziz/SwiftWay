@@ -4,5 +4,6 @@ module swiftway {
     requires java.sql;
 
     opens swiftway to javafx.fxml;
+    opens  swiftway.Models;
     exports swiftway;
 }

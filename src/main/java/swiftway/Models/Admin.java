@@ -2,17 +2,19 @@ package swiftway.Models;
 
 import java.util.ArrayList;
 
+import javafx.beans.property.SimpleStringProperty;
+
 public class Admin {
        // Les attributs de la classe :
 
-    private String nomUtilisateur;
-    private String motDePasse;
+    private SimpleStringProperty nomUtilisateur;
+    private SimpleStringProperty motDePasse;
  
        // Le constructeur de la classe :
 
     public Admin(String nomUtilisateur, String motDePasse) {
-        this.nomUtilisateur = nomUtilisateur;
-        this.motDePasse = motDePasse;
+        this.nomUtilisateur = new SimpleStringProperty(nomUtilisateur);
+        this.motDePasse = new SimpleStringProperty(motDePasse);
     }
 
        // La Depandence avec la classe Offre :
@@ -22,16 +24,16 @@ public class Admin {
        // Les getters et les setters :
 
     public String getNomUtilisateur() {
-        return nomUtilisateur;
+        return nomUtilisateur.get();
     }
-    public void setNomUtilisateur(String nomUtilisateur) {
+    public void setNomUtilisateur(SimpleStringProperty nomUtilisateur) {
         this.nomUtilisateur = nomUtilisateur;
     }
     public String getMotDePasse() {
-        return motDePasse;
+        return motDePasse.get();
     }
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
+    public void setMotDePasse(SimpleStringProperty motDePasse) {
+        this.motDePasse =motDePasse;
     }
 
        // Les methodes du classe :

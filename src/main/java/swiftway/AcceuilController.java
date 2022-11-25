@@ -1,13 +1,15 @@
 package swiftway;
 
 import java.io.IOException;
-<<<<<<< HEAD
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -81,7 +83,7 @@ public class AcceuilController  implements Initializable{
     }
 
          //La Methode qui Remplie le PieChart avec des donnees existants dans une Base de Donnees et Le Label qui represent le nombre d'Offre:
-               ArrayList<Offre> offres=new ArrayList<>();
+              ArrayList<Offre> offres=new ArrayList<>();
      public void RemplirPieChart_etLabel(){
         data=FXCollections.observableArrayList();
          //Connexion au Base de donnees pour remplir les offres dans une ArrayList 'Offres'
@@ -103,14 +105,17 @@ public class AcceuilController  implements Initializable{
           //Remplire le Label correspondant au Nombre d'Offre:
           nbrOffre.setText(offres.size()+"");
           //Apres avoir L'ArrayList Offres ,Construire le Piechart selon le nom de societe et le nombre des offres aui offert:  
-        HashMap<String,Integer> map =new HashMap<String,Integer>();
-        for(int i=0 ;i<offres.size();i++){
-           for(int j=i ;j<offres.size();j++){
-            if(offres.get(i).companie.getNomDeSociete().equals(offres.get(j).companie.getNomDeSociete())){
-              if(map.containsKey(offres.get(i).companie.getNomDeSociete())){
-                map.replace(offres.get(i).companie.getNomDeSociete(), map.get(offres.get(i).companie.getNomDeSociete()), map.get(offres.get(i).companie.getNomDeSociete())+1);  
+          //Remplire Le hashMap 'map' :
+          ArrayList<Offre> offres2=(ArrayList<Offre>)offres.clone();
+          HashMap<String,Integer> map =new HashMap<String,Integer>();
+        for(int i=0 ;i<offres2.size();i++){
+           for(int j=i ;j<offres2.size();j++){
+            if(offres2.get(i).companie.getNomDeSociete().equals(offres2.get(j).companie.getNomDeSociete())){
+              if(map.containsKey(offres2.get(i).companie.getNomDeSociete())){
+                map.replace(offres2.get(i).companie.getNomDeSociete(), map.get(offres2.get(i).companie.getNomDeSociete()), map.get(offres2.get(i).companie.getNomDeSociete())+1);  
+                offres2.remove(j);
               }else{
-                map.put(offres.get(j).companie.getNomDeSociete(), 1);
+                map.put(offres2.get(i).companie.getNomDeSociete(), 1);
               }
             }
            }
@@ -121,15 +126,6 @@ public class AcceuilController  implements Initializable{
        CompagniesChart.setData(data);
     }
 
-
-=======
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
-
-public class AcceuilController {
->>>>>>> f9aa716feb6ea6b1c33a7fd21533ab69a9360d82
     @FXML
     void setRoottoCompagnie(MouseEvent event) throws IOException {
       App.setRoot("Compagnie");
@@ -153,8 +149,5 @@ public class AcceuilController {
     void btnDeconnexion(ActionEvent event) {
        LoginController.fermerProgramme();
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> f9aa716feb6ea6b1c33a7fd21533ab69a9360d82
-}
+  }
+
