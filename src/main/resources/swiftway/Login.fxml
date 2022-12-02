@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+
 <HBox prefHeight="560.0" prefWidth="940.0" stylesheets="@CSS_files/CSS_1.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="swiftway.LoginController">
    <children>
       <VBox maxHeight="567.0" maxWidth="390.0" prefHeight="567.0" prefWidth="390.0" styleClass="hbox1">
@@ -22,11 +23,14 @@
                <image>
                   <Image url="@images/Logo01.png" />
                </image>
+               
                <effect>
                   <Lighting diffuseConstant="0.0">
                      <bumpInput>
                         <PerspectiveTransform />
+                        
                      </bumpInput>
+                     
                      <light>
                         <Light.Distant />
                      </light>
@@ -81,6 +85,7 @@
                         <Image url="@images/Password_Icon.png" />
                      </image>
                   </ImageView>
+            
                   <PasswordField fx:id="password" prefHeight="37.0" prefWidth="371.0" promptText="PassWord" styleClass="txtlabel">
                      <HBox.margin>
                         <Insets />
