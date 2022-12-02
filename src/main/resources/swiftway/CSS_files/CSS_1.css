@@ -3,6 +3,7 @@
    -fx-background-radius:8px;
    -fx-text-fill: rgb(255, 255, 255);
 }
+
 .btnclass:hover{
     -fx-background-color: white;
     -fx-text-fill: rgb(40, 185, 185);
@@ -11,11 +12,13 @@
     -fx-border-radius:8px;
     -fx-cursor:hand;
 }
+
 .btnclass:pressed{
     -fx-rotate: 10deg;
     -fx-scale-x:1.1;
     -fx-scale-y:1.1;
 }
+
 .hbox1{
     -fx-background-color:rgb(40, 185, 185);
 }
