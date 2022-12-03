@@ -46,6 +46,7 @@ public class LoginController {
         }
           
       }
+          
     } catch (SQLException e) {
      System.out.println("Erreur D'execution du query !!");
      e.printStackTrace();
@@ -72,6 +73,7 @@ public class LoginController {
           System.exit(0);
        });
     }
+    
     public static void Erreur(){
        Platform.runLater(()->{
         Alert erreur=new Alert(Alert.AlertType.ERROR);
