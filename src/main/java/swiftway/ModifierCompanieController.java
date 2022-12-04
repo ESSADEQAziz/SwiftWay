@@ -3,7 +3,6 @@ package swiftway;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
 import javafx.application.Platform;
@@ -36,15 +35,18 @@ public class ModifierCompanieController {
        String query="select * from companie;";
        
        ResultSet results=sqlStatement.executeQuery(query);
+       int temp=0;
        while (results.next()!= false) {
             if(results.getString(1).equals(oldNomSociete.getText())){
             String query2="update companie set nomDeSociete='"+newNomSociete.getText()+"',totalVehicules='"+ Integer.valueOf(newNbrVehicules.getText())+"'  where nomDeSociete='"+oldNomSociete.getText()+"';";
             sqlStatement2.execute(query2);
             succesDeModification();
-            break;
+            temp++;
+            //break;
+            //Car si on fait if(results.next()==false) malgre la derniere valeur dans la table verifie la condition du while au dessus le results.next()sera false malgre le break s'il existe;
         } 
     }
-        if(results.next()==false){
+        if(temp == 0){
           ErreurCompagnie();
        }
        

@@ -36,15 +36,18 @@ public class AjouterCompanieController {
     if (newSociete.getText().equals("") || totaleVehicules.getText().equals("") ) {
         ErreurEmptyField();
         }else{
+            int temp=0;
              while (results.next()!= false) {
          if(results.getString(1).equals(newSociete.getText())){
              ErreurCompagnie();
              System.out.println("la companie existe.");
-            break;
+            temp++;
+            //break;
+            //Car si on fait if(results.next()==false) malgre la derniere valeur dans la table verifie la condition du while au dessus le results.next()sera false malgre le break s'il existe;
          }
         System.out.println("eteration."); 
          }
-         if (results.next() == false) {
+         if (temp == 0) {
             String query2="insert into companie values ('"+newSociete.getText()+"','"+Integer.valueOf(totaleVehicules.getText())+"');";
             sqlStatement2.execute(query2);
             succesDajout();

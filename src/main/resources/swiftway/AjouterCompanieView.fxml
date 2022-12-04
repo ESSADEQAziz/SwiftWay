@@ -27,7 +27,7 @@
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="newSociete" layoutX="75.0" layoutY="158.0" prefHeight="30.0" prefWidth="350.0" promptText="Ex: example" />
+      <TextField fx:id="newSociete" layoutX="75.0" layoutY="158.0" prefHeight="30.0" prefWidth="350.0" promptText="Ex:exemple" />
       <TextField fx:id="totaleVehicules" layoutX="79.0" layoutY="225.0" prefHeight="30.0" prefWidth="350.0" promptText="Ex: 10" />
       <Button layoutX="79.0" layoutY="279.0" mnemonicParsing="false" onAction="#btnAjouter" prefHeight="37.0" prefWidth="350.0" styleClass="btnclass" text="Ajouter" />
    </children>

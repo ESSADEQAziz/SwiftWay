@@ -26,15 +26,18 @@ public class SupprimerCompanieController {
        String query="select * from companie;";
        ResultSet results=sqlStatement.executeQuery(query);
        System.out.println("Execution du query avec succes !!");
+       int temp=0;
        while (results.next()!= false) {
         if (results.getString(1).equals(nomDeSociete.getText())) {
             String query2 ="delete from companie where nomDeSociete='"+nomDeSociete.getText()+"';";
             sqlStatement2.execute(query2);
             succesDeSuppression();
-            break;
+            temp++;
+            //break;
+            //Car si on fait if(results.next()==false) malgre la derniere valeur dans la table verifie la condition du while au dessus le results.next()sera false malgre le break s'il existe;
         }
        }
-       if (results.next()==false) {
+       if (temp==0) {
         ErreurCompagnie();
        }
     } catch (SQLException e) {

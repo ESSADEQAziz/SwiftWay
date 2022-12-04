@@ -1,6 +1,12 @@
 .LeftVbox{
     -fx-background-color: rgb(40, 185, 185);
 }
+.adminImage{
+   
+}
+.adminImageContainer{   
+    -fx-background-radius: 20px;
+}
 .categories:hover{
     -fx-border-width: 2px;
     -fx-border-color: aliceblue;

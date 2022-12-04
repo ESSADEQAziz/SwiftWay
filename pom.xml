@@ -124,7 +124,18 @@
     <artifactId>xmlbeans</artifactId>
     <version>4.0.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.openjfx/javafx-swing -->
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-swing</artifactId>
+    <version>19</version>
+</dependency>
 
+<dependency>
+		<groupId>com.sun.mail</groupId>
+		<artifactId>javax.mail</artifactId>
+		<version>1.6.2</version>
+	</dependency>
     </dependencies>
     <build>
         <plugins>

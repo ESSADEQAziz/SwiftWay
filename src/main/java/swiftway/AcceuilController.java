@@ -1,19 +1,25 @@
 package swiftway;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.InputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -25,6 +31,8 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import swiftway.DB_connection.DBconnection;
 import swiftway.Models.Companie;
@@ -48,11 +56,56 @@ public class AcceuilController  implements Initializable{
 
     @FXML
     private BarChart barchart;
+    @FXML
+    private ImageView imageAdmin;
 
    @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         RemplirPieChart_etLabel();
         RemplirBarChart();
+        try {
+          AdminImage(imageAdmin);
+        } catch (FileNotFoundException e) {
+          e.printStackTrace();
+        } 
+         
+
+
+          
+        
+    }
+    public static void AdminImage(ImageView img) throws FileNotFoundException{
+      Connection cnx=DBconnection.getConnection();
+      try {
+              PreparedStatement ps = cnx.prepareStatement("SELECT * FROM admin;");
+              ResultSet rs = ps.executeQuery();
+              while(rs.next())
+              {
+                if (rs.getString(1).equals(LoginController.user)) {
+                  InputStream is = rs.getBinaryStream("image");
+                   OutputStream os = new FileOutputStream(new File("photo.png"));
+                  byte[]content = new byte[1024];
+                  int size = 0;
+                  while((size=is.read(content))!= -1)
+                  {
+                      os.write(content,0,size);
+                  }
+                  os.close();
+                  is.close();
+                  Image imagex = new Image("file:photo.png",250,250,true,true);
+                  img.setImage(imagex);
+                  img.setPreserveRatio(true);
+                }
+                   
+              }
+              cnx.close();
+          
+              
+          } catch (SQLException ex) {
+              Logger.getLogger(ProfileController.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (IOException ex) {
+              Logger.getLogger(ProfileController.class.getName()).log(Level.SEVERE, null, ex);
+          }
     }
 
          // La Methode qui Remplie le Barchart avec des donnees existants dans une base de donnees:
@@ -93,7 +146,7 @@ public class AcceuilController  implements Initializable{
             String query="select * from Offre;";
             ResultSet results=statement.executeQuery(query);
             while (results.next() != false) {
-                offres.add(new Offre(Double.parseDouble(results.getString("idOffre")), 
+                offres.add(new Offre(Integer.parseInt(results.getString("idOffre")), 
                 Integer.valueOf(results.getString("nbrDePlacesDisponible")),
                 Double.parseDouble(results.getString("prix")),
                 new Companie(results.getString("nomDeSociete"))));
@@ -146,10 +199,6 @@ public class AcceuilController  implements Initializable{
         App.setRoot("Profile");
     }
 
-    @FXML
-    void setRoottoStatistique(MouseEvent event) throws IOException {
-        App.setRoot("Statistique");
-    }
     @FXML
     void btnDeconnexion(ActionEvent event) {
        LoginController.fermerProgramme();

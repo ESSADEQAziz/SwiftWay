@@ -41,7 +41,7 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+                  <ImageView fx:id="imageAdmin" fitHeight="70.0" fitWidth="70.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
                      <image>
                         <Image url="@images/admin.png" />
                      </image>
@@ -166,33 +166,10 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Statistique" alignment="CENTER" onMouseClicked="#setRoottoStatistique" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
-                     <children>
-                        <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/statistiques.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="15.0" />
-                           </HBox.margin>
-                           <effect>
-                              <ColorAdjust brightness="1.0" />
-                           </effect>
-                        </ImageView>
-                        <Label prefHeight="18.0" prefWidth="102.0" text="Statistique" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="18.0" />
-                           </font>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
                </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </VBox>
             <VBox alignment="CENTER" prefHeight="52.0" prefWidth="247.0">
                <children>

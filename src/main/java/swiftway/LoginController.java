@@ -22,6 +22,8 @@ public class LoginController {
     @FXML
     private PasswordField password;
 
+    public static String user; // to get the correct username and use it in setImgAdmin in the the athors UI :
+
     @FXML
     public void btnLogin() throws IOException{
       if(username.getText().equals("") || password.getText().equals("")){
@@ -30,23 +32,25 @@ public class LoginController {
        Connection cnx=DBconnection.getConnection();
       try {
      Statement sqlStatement =cnx.createStatement();
-     String query="select * from Admin;";
+     String query="select * from admin;";
      ResultSet results=sqlStatement.executeQuery(query);
      System.out.println("Execution du query avec succes !!");
-
+      
+     int temp=0;
       while(results.next()){
         if(username.getText().equals(results.getString("nomUtilisateur")) &&
          password.getText().equals(results.getString("motDePasse"))){
-            App.setRoot("Acceuil");
-            break;
-        }else{
-            LoginController.Erreur();
-            username.setText("");
-            password.setText("");
-        }
-          
+            temp++;
+        }   
       }
-          
+      if (temp != 0) {
+         user=username.getText();
+            App.setRoot("Acceuil");
+      }else{
+        LoginController.Erreur();
+        username.setText("");
+        password.setText("");
+      }
     } catch (SQLException e) {
      System.out.println("Erreur D'execution du query !!");
      e.printStackTrace();
@@ -73,7 +77,6 @@ public class LoginController {
           System.exit(0);
        });
     }
-    
     public static void Erreur(){
        Platform.runLater(()->{
         Alert erreur=new Alert(Alert.AlertType.ERROR);

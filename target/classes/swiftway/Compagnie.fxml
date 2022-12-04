@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -39,7 +40,7 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <ImageView fitHeight="70.0" fitWidth="70.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
+                  <ImageView fx:id="imageAdmin" fitHeight="70.0" fitWidth="70.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true">
                      <image>
                         <Image url="@images/admin.png" />
                      </image>
@@ -164,33 +165,10 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox id="Statistique" alignment="CENTER" onMouseClicked="#setRoottoStatistique" prefHeight="45.0" prefWidth="200.0" styleClass="categories">
-                     <children>
-                        <ImageView fitHeight="21.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/statistiques.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="15.0" />
-                           </HBox.margin>
-                           <effect>
-                              <ColorAdjust brightness="1.0" />
-                           </effect>
-                        </ImageView>
-                        <Label prefHeight="18.0" prefWidth="102.0" text="Statistique" textFill="WHITE">
-                           <font>
-                              <Font name="Calibri Bold" size="18.0" />
-                           </font>
-                           <padding>
-                              <Insets left="15.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Label>
-                     </children>
-                  </HBox>
                </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
             </VBox>
             <VBox alignment="CENTER" prefHeight="52.0" prefWidth="247.0">
                <children>
@@ -219,9 +197,14 @@
                   <Font name="Calibri Bold" size="32.0" />
                </font>
             </Label>
-            <HBox alignment="TOP_RIGHT" prefHeight="33.0" prefWidth="613.0" spacing="20.0">
+            <HBox prefHeight="40.0" prefWidth="613.0" spacing="10.0">
                <children>
-                  <ImageView fitHeight="24.0" fitWidth="49.0" onMouseClicked="#refreshIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <TextField fx:id="search" prefHeight="40.0" prefWidth="530.0" promptText="Search">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <ImageView fitHeight="43.0" fitWidth="34.0" onMouseClicked="#refreshIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@images/refresh.png" />
                      </image>
@@ -229,21 +212,21 @@
                         <Insets />
                      </HBox.margin>
                   </ImageView>
-                  <ImageView fitHeight="24.0" fitWidth="49.0" onMouseClicked="#exportIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                  <ImageView fitHeight="43.0" fitWidth="34.0" onMouseClicked="#exportIcon" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
                      <image>
                         <Image url="@images/printer.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <TableView fx:id="table" prefHeight="315.0" prefWidth="613.0">
+            <TableView fx:id="table" prefHeight="315.0" prefWidth="613.0" stylesheets="@CSS_files/CSS3.css">
                <columns>
                   <TableColumn fx:id="nomDeSociete" prefWidth="202.66666221618652" text="Nom De Societe" />
                   <TableColumn fx:id="totalVehicules" prefWidth="199.9999542236328" text="Nombre de Vehicules" />
                   <TableColumn fx:id="nombreDoffres" prefWidth="207.33334350585938" text="Nombre D'offres" />
                </columns>
                <VBox.margin>
-                  <Insets top="10.0" />
+                  <Insets />
                </VBox.margin>
                <opaqueInsets>
                   <Insets />

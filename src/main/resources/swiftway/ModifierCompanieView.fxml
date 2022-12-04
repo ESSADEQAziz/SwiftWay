@@ -31,8 +31,8 @@
          <font>
             <Font size="13.0" />
          </font></Label>
-      <TextField fx:id="oldNomSociete" layoutX="90.0" layoutY="170.0" prefHeight="35.0" prefWidth="320.0" promptText="EX:exemple" />
-      <TextField fx:id="newNomSociete" layoutX="90.0" layoutY="231.0" prefHeight="35.0" prefWidth="320.0" promptText="Ex:nouveauExample" />
+      <TextField fx:id="oldNomSociete" layoutX="90.0" layoutY="170.0" prefHeight="35.0" prefWidth="320.0" promptText="Ex:exemple" />
+      <TextField fx:id="newNomSociete" layoutX="90.0" layoutY="231.0" prefHeight="35.0" prefWidth="320.0" promptText="Ex:nouveauExemple" />
       <TextField fx:id="newNbrVehicules" layoutX="90.0" layoutY="293.0" prefHeight="35.0" prefWidth="320.0" promptText="Ex:10" />
       <Button layoutX="90.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnModifier" prefHeight="35.0" prefWidth="320.0" styleClass="btnclass" stylesheets="@CSS_files/CSS_1.css" text="Modifier" />
    </children>

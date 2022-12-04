@@ -17,16 +17,21 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import swiftway.DB_connection.DBconnection;
@@ -34,6 +39,8 @@ import swiftway.Models.Companie;
 import swiftway.Models.Offre;
 
 public class CompagnieController implements Initializable{
+    @FXML
+    private ImageView imageAdmin;
     
     @FXML
     private TableColumn<Companie,String> nomDeSociete;
@@ -48,15 +55,57 @@ public class CompagnieController implements Initializable{
     private TableColumn<Companie,Integer> totalVehicules;
    
 //=========================================================================================================================================================
-    @Override
+@FXML
+private TextField search;
+@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        try {
+            AcceuilController.AdminImage(imageAdmin);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         nomDeSociete.setCellValueFactory(new PropertyValueFactory<>("nomDeSociete"));
         totalVehicules.setCellValueFactory(new PropertyValueFactory<>("totalVehicules"));
         nombreDoffres.setCellValueFactory(new PropertyValueFactory<>("nombreDoffres"));
         ObservableList<Companie> list=FXCollections.observableArrayList(RemplireTable());
        table.setItems(list);
-       
+
+         //1.The filter for the Search TextField :
+       FilteredList<Companie> filteredData = new FilteredList<>(list, p -> true);
+
+        // 2. Set the filter Predicate whenever the filter changes.
+        search.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(Companie -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name field in your object with filter.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (String.valueOf(Companie.getNomDeSociete()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                    // Filter matches first name.
+
+                } else if (String.valueOf(Companie.getNombreDoffres()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                } 
+
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<Companie> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(table.comparatorProperty());
+        // 5. Add sorted (and filtered) data to the table.
+        table.setItems(sortedData);
+
     }
+    
 //=========================================================================================================================================================
     public ArrayList<Companie> RemplireTable(){
         ArrayList<Companie> liste = new ArrayList<>();
@@ -72,7 +121,7 @@ public class CompagnieController implements Initializable{
        
        ArrayList<Offre> offres = new ArrayList<>();
        while (results1.next() != false) {
-        offres.add(new Offre(Double.parseDouble(results1.getString("idOffre")), 
+        offres.add(new Offre(Integer.parseInt(results1.getString("idOffre")), 
                 Integer.valueOf(results1.getString("nbrDePlacesDisponible")),
                 Double.parseDouble(results1.getString("prix")),
                 new Companie(results1.getString("nomDeSociete"))));
@@ -119,20 +168,20 @@ public class CompagnieController implements Initializable{
 
     @FXML
     void btnModifier(ActionEvent event) throws IOException {
-        Stage stage1 = new Stage();
+        Stage stage2 = new Stage();
         Scene scene = new Scene(App.loadFXML("ModifierCompanieView"), 500, 415);
-        stage1.setTitle("Modifier Compagnie");
-        stage1.setScene(scene);
-        stage1.show();  
+        stage2.setTitle("Modifier Compagnie");
+        stage2.setScene(scene);
+        stage2.show();  
     }
 
     @FXML
     void btnSupprimer(ActionEvent event) throws IOException {
-        Stage stage1 = new Stage();
-        Scene scene = new Scene(App.loadFXML("SupprimerCompanieView"), 500, 300);
-        stage1.setTitle("Supprimer Compagnie");
-        stage1.setScene(scene);
-        stage1.show();  
+        Stage stage3 = new Stage();
+        Scene scene = new Scene(App.loadFXML("SupprimerCompanieView"), 500, 340);
+        stage3.setTitle("Supprimer Compagnie");
+        stage3.setScene(scene);
+        stage3.show();  
     }
     //=========================================================================================================================================================
     @FXML
@@ -156,6 +205,7 @@ public class CompagnieController implements Initializable{
             OutputStream fileOut=new FileOutputStream("SwiftWay_Compagnies.xls");
                        // The name of the file can have an '.xls' or '.xlsx' extention depend on version.
             wb.write(fileOut);
+            succesDexportation();
             fileOut.close();
         } catch (FileNotFoundException e) {
             System.out.println("1111");
@@ -172,6 +222,18 @@ public class CompagnieController implements Initializable{
         App.setRoot("Compagnie");
     }
     //=========================================================================================================================================================
+   
+    private void succesDexportation(){
+        Platform.runLater(()->{
+         Alert succes=new Alert(Alert.AlertType.INFORMATION);
+         succes.setTitle("Exportation");
+         succes.setHeaderText("Succes D'Exportation");
+         succes.setContentText("Les informations ont ete bien exportee en fichier Excel.");
+        succes.show();
+        });
+     }
+    //=========================================================================================================================================================
+   
     @FXML
     void setRoottoAcceuil(MouseEvent event) throws IOException {
         App.setRoot("Acceuil");
@@ -192,10 +254,6 @@ public class CompagnieController implements Initializable{
         App.setRoot("Profile");
     }
 
-    @FXML
-    void setRoottoStatistique(MouseEvent event) throws IOException {
-        App.setRoot("Statistique");
-    }
     @FXML
     void btnDeconnexion(ActionEvent event) {
        LoginController.fermerProgramme();
