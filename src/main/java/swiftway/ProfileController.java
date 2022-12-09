@@ -62,16 +62,7 @@ public class ProfileController implements Initializable{
     @FXML
     private ImageView crayonPrenom;
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-        try {
-            AcceuilController.AdminImage(imageAdmin);
-            AcceuilController.AdminImage(imageProfile);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        RemplirLabels();
-    }
+    
 
 
 
