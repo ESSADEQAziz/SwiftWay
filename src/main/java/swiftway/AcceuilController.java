@@ -77,7 +77,7 @@ public class AcceuilController  implements Initializable{
     public static void AdminImage(ImageView img) throws FileNotFoundException{
       Connection cnx=DBconnection.getConnection();
       try {
-              PreparedStatement ps = cnx.prepareStatement("SELECT * FROM admin;");
+              PreparedStatement ps = cnx.prepareStatement("select * from admin;");
               ResultSet rs = ps.executeQuery();
               while(rs.next())
               {
