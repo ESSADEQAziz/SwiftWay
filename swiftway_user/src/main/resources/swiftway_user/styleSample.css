@@ -1,0 +1,106 @@
+.bk{
+    /*-fx-background-image: url("img/photo.gif");*/
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+.t2{
+   /* -fx-background-image: url("img/t2.jpg");*/
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+.table{
+
+ /*-fx-background-image: url("img/table.png");*/
+      -fx-background-color:rgb(40, 185, 185);
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+.mercedes{
+
+ /*-fx-background-image: url("img/mercedes.jpg");*/
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+
+.road{
+
+ -fx-background-image: url("img/road.jpg");
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+.admin{
+
+ -fx-background-image: url("img/1079304.jpg");
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+.table1{
+
+ -fx-background-image: url("img/1079304.jpg");
+      -fx-background-size: cover;
+      -fx-background-repeat: no-repeat;
+      -fx-background-attachment: fixed;
+}
+
+.darkblue{
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Britannic Bold";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 15px;
+    -fx-padding: 10 20 10 20;
+}
+.darkblue Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+}
+.darkblue1{
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Britannic Bold";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+}
+.darkblue1 Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );
+}
+.darkblue22{
+    -fx-background-color:#00ccff;
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "Britannic Bold";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-color: black;
+}
+.darkblue2 Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 1 );}
+
+.box{
+    -fx-effect: dropshadow(one-pass-box , deepskyblue,20, 1.0, 0 , 1 );}
+
+
+

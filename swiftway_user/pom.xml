@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>swiftway_user</groupId>
+    <artifactId>swiftway_user</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>13</version>
+        </dependency>
+                <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.16</version>
+</dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>13</version>
+        </dependency>
+
+
+        
+<dependency>
+    <groupId>com.jfoenix</groupId>
+    <artifactId>jfoenix</artifactId>
+    <version>9.0.10</version>
+</dependency>
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx</artifactId>
+    <version>8.9</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-commons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-commons</artifactId>
+    <version>9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-fontawesome -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-fontawesome</artifactId>
+    <version>4.7.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialicons</artifactId>
+    <version>2.2.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-octicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-octicons</artifactId>
+    <version>4.3.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-weathericons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-weathericons</artifactId>
+    <version>2.0.10-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialdesignfont -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialdesignfont</artifactId>
+    <version>2.0.26-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-icons525 -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-icons525</artifactId>
+    <version>4.2.0-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-controls -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-controls</artifactId>
+    <version>9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-emojione -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-emojione</artifactId>
+    <version>3.1.1-9.1.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/de.jensd/fontawesomefx-materialstackicons -->
+<dependency>
+    <groupId>de.jensd</groupId>
+    <artifactId>fontawesomefx-materialstackicons</artifactId>
+    <version>2.1-5-9.1.2</version>
+</dependency>
+<dependency>
+    <groupId>org.openjfx</groupId>
+    <artifactId>javafx-swing</artifactId>
+    <version>19</version>
+</dependency>
+
+
+
+
+
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.6</version>
+                <executions>
+                    <execution>
+                        <!-- Default configuration for running -->
+                        <!-- Usage: mvn clean javafx:run -->
+                        <id>default-cli</id>
+                        <configuration>
+                            <mainClass>swiftway_user.App</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
