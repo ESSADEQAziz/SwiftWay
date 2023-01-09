@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -62,18 +63,16 @@ public class ProfileController implements Initializable{
     @FXML
     private ImageView crayonPrenom;
 
-    @FXML
+    @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        try{
+        try {
             AcceuilController.AdminImage(imageAdmin);
             AcceuilController.AdminImage(imageProfile);
-           } catch (FileNotFoundException e) {
-               e.printStackTrace();
-           }
-           RemplirLabels();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-            
-
+        RemplirLabels();
+    }
 
     @FXML
     public static String crayonSelectionnee;
@@ -148,7 +147,7 @@ public class ProfileController implements Initializable{
        }
     }   
 
-    public void ModifierAdminImage() throws SQLException, FileNotFoundException{
+    public void ModifierAdminImage() throws SQLException, IOException{
         Connection cnx=DBconnection.getConnection();
         FileChooser fileChooser=new FileChooser();
        fileChooser.getExtensionFilters().add(new ExtensionFilter("Images", "*.png","*.PNG","*.jpg","*.JPG","*.jpeg"));
@@ -162,10 +161,14 @@ public class ProfileController implements Initializable{
        FileInputStream fin = new FileInputStream(file);
        int len = (int)file.length();
        ps.setBinaryStream(1,fin,len);
-       int i=ps.executeUpdate();
+       if (ps.executeUpdate()==1) {
+        System.out.println("Image Uploaded.");
+       }else{
+        System.out.println("Image not Uploaded.");
+       }
+       ;
        }
         AcceuilController.AdminImage(imageProfile);
-    
     }
     @FXML
     void setRoottoAcceuil(MouseEvent event) throws IOException {

@@ -53,7 +53,6 @@ public class AjouterOffreController implements Initializable{
        String query="select nomDeSociete from companie;";
        String query2="insert into offre (nbrDePlacesDisponible,prix,nomDeSociete,villeDepart,villeDarrivee) "+
        "values ("+Integer.parseInt(placesDispo.getText())+","+Double.parseDouble(prix.getText())+",'"+nomDeSociete.getText()+"','"+villeDepart.getText()+"','"+villeDarrivee.getText()+"');";
-       
        String query3="select nomDeVille from ville;";
         
        int temp1=0;

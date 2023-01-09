@@ -67,17 +67,12 @@ public class AcceuilController  implements Initializable{
           AdminImage(imageAdmin);
         } catch (FileNotFoundException e) {
           e.printStackTrace();
-        } 
-         
-
-
-          
-        
+        }  
     }
     public static void AdminImage(ImageView img) throws FileNotFoundException{
       Connection cnx=DBconnection.getConnection();
       try {
-              PreparedStatement ps = cnx.prepareStatement("select * from admin;");
+              PreparedStatement ps = cnx.prepareStatement("SELECT * FROM admin;");
               ResultSet rs = ps.executeQuery();
               while(rs.next())
               {

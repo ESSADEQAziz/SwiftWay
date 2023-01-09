@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 04 jan. 2023 à 19:51
+-- Généré le : lun. 09 jan. 2023 à 23:06
 -- Version du serveur : 10.4.25-MariaDB
 -- Version de PHP : 8.1.10
 
@@ -90,48 +90,38 @@ CREATE TABLE `seats` (
 --
 
 INSERT INTO `seats` (`seatname`, `uname`, `service`, `count`, `id`) VALUES
-('A1', 'Hatim', 'SAT', 1, 3),
-('A2', 'Hatim', 'SAT', 1, 4),
-('A3', 'Aziz', 'CTM', 1, 5),
+('A1', 'Hatim', 'SAT', 0, 1),
+('A2', 'Hatim', 'SAT', 0, 2),
+('A1', 'Hatim', 'CTM', 1, 3),
+('A2', 'Hatim', 'CTM', 1, 4),
+('A3', 'Hatim', 'CTM', 1, 5),
 ('A4', 'Hatim', 'CTM', 1, 6),
-('B1', 'Aziz', 'CTM', 1, 7),
-('B2', 'Hatim', 'CTM', 0, 8),
-('B3', 'Hatim', 'CTM', 0, 9),
-('B4', 'Aziz', 'CTM', 1, 10),
+('B1', 'Hatim', 'CTM', 1, 7),
+('B2', 'Hatim', 'CTM', 1, 8),
+('B3', 'Hatim', 'CTM', 1, 9),
+('B4', 'Hatim', 'CTM', 1, 10),
 ('C1', 'Hatim', 'CTM', 1, 11),
 ('C2', 'Hatim', 'CTM', 1, 12),
 ('C3', 'Hatim', 'CTM', 1, 13),
 ('C4', 'Hatim', 'CTM', 1, 14),
-('D1', 'Aziz', 'CTM', 0, 15),
+('D1', 'Hatim', 'CTM', 1, 15),
 ('D2', 'Hatim', 'CTM', 0, 16),
 ('D3', 'Hatim', 'CTM', 0, 17),
 ('D4', 'Hatim', 'CTM', 0, 18),
-('A3', 'Hatim', 'SAT', 0, 19),
-('A4', 'Hatim', 'SAT', 0, 20),
+('A3', 'Hatim', 'SAT', 1, 19),
+('A4', 'Hatim', 'SAT', 1, 20),
 ('B1', 'Hatim', 'SAT', 1, 21),
 ('B2', 'Hatim', 'SAT', 0, 22),
+('B3', 'Hatim', 'SAT', 0, 23),
+('B4', 'Hatim', 'SAT', 0, 24),
+('C1', 'Hatim', 'SAT', 0, 25),
 ('C2', 'Hatim', 'SAT', 0, 26),
+('C3', 'Hatim', 'SAT', 0, 27),
 ('C4', 'Hatim', 'SAT', 0, 28),
 ('D1', 'Hatim', 'SAT', 0, 29),
 ('D2', 'Hatim', 'SAT', 0, 30),
 ('D3', 'Hatim', 'SAT', 0, 31),
-('D4', 'Hatim', 'SAT', 0, 32),
-('A1', 'Hatim', 'ITRAN', 0, 33),
-('A2', 'Hatim', 'ITRAN', 0, 34),
-('A3', 'Hatim', 'ITRAN', 0, 35),
-('A4', 'Hatim', 'ITRAN', 0, 36),
-('B1', 'Hatim', 'ITRAN', 0, 37),
-('B2', 'Hatim', 'ITRAN', 0, 38),
-('B3', 'Hatim', 'ITRAN', 0, 39),
-('B4', 'Hatim', 'ITRAN', 0, 40),
-('C1', 'Hatim', 'ITRAN', 0, 41),
-('C2', 'Hatim', 'ITRAN', 0, 42),
-('C3', 'Hatim', 'ITRAN', 0, 50),
-('C4', 'Hatim', 'ITRAN', 0, 51),
-('D1', 'Hatim', 'ITRAN', 0, 54),
-('D2', 'Hatim', 'ITRAN', 0, 55),
-('D3', 'Hatim', 'ITRAN', 0, 56),
-('D4', 'Hatim', 'ITRAN', 0, 57);
+('D4', 'Hatim', 'SAT', 0, 32);
 
 -- --------------------------------------------------------
 
@@ -163,8 +153,7 @@ INSERT INTO `seat_names` (`seatname`) VALUES
 ('D1'),
 ('D2'),
 ('D3'),
-('D4'),
-('E1');
+('D4');
 
 -- --------------------------------------------------------
 

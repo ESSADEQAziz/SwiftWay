@@ -86,6 +86,7 @@ public class ModifierInfosProfileController implements Initializable{
         ResultSet res3=sqlsStatement3.executeQuery("select nomUtilisateur from admin;");
         while (res3.next()) {
             if (res3.getString(1).equals(ancienneValeur.getText())) {
+            LoginController.user=nouvelleValeur.getText();
                 temp++;
             }
         }
@@ -176,12 +177,15 @@ public class ModifierInfosProfileController implements Initializable{
      String query="select email from admin where nomUtilisateur='"+LoginController.user+"';";
      ResultSet results=sqlStatement.executeQuery(query);
      System.out.println("Execution du query avec succes !!");
-       while (results.next()) {
-         message.setFrom(new InternetAddress("aziz.xfor@gmail.com"));
-        message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(results.getString("email")));
-        message.setSubject(field+" a bien ete modifiee .");
-        message.setText("Votre nouveau "+field+" est : "+nouvelleValeur.getText()+" .");
-       }
+      
+        
+     while (results.next()) {
+        message.setFrom(new InternetAddress("aziz.xfor@gmail.com"));
+       message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(results.getString("email")));
+       message.setSubject(field+" a bien ete modifiee .");
+       message.setText("Votre nouveau "+field+" est : "+nouvelleValeur.getText()+" .");
+      }
+        
        
 
     //Etape 3 Envoie de message :
@@ -215,6 +219,8 @@ public class ModifierInfosProfileController implements Initializable{
          Alert erreur=new Alert(Alert.AlertType.ERROR);
          erreur.setTitle("Erreur");
          erreur.setContentText("Veuillez Remplir les zones de text.");
+         ancienneValeur.setText("");
+         nouvelleValeur.setText("");
          erreur.show();
         });
      }
