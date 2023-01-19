@@ -150,8 +150,8 @@ public class ModifierInfosProfileController implements Initializable{
     }
 
 //===============================================================================================================================
-    private String userName="aziz.xfor@gmail.com";
-    private String passWord="rhteyftlvicuwuef";
+    private String userName="aziz.xfor@gmail.com"; // The sending email
+    private String passWord="shteyftlvicuwuef";//generate a password for the application (16 char) after the activation of '2 step verification'.
 
     public void EnvoieMail(String field){
     //Etape 1 Creation de la session :
